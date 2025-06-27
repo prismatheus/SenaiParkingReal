@@ -1,0 +1,290 @@
+/* adminUsers.css */
+
+.body-admin-users {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.admin-users-header {
+    width: calc(100% - 4rem);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    z-index: 10;
+}
+
+.admin-users-logo {
+    height: 60px;
+    width: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.admin-users-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 800px; /* Wider container for user list */
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    gap: 1.5rem;
+    flex-grow: 1;
+    margin-top: 5rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.admin-users-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
+.user-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.user-list-item {
+    background-color: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    color: #374151;
+    border-left: 5px solid #86c4cf; /* Gray border for general users */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative; /* For dropdown positioning */
+}
+
+.user-list-item.admin {
+    border-left: 5px solid #232f99; /* Red border for admins */
+}
+
+.user-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; /* Smaller gap between info lines */
+    flex-grow: 1;
+}
+
+.user-info p {
+    margin: 0;
+}
+
+.user-info strong {
+    color: #1f2937;
+}
+
+/* Styles for inline editable inputs */
+.user-info .editable-input {
+    width: calc(100% - 16px); /* Adjust width for padding */
+    padding: 0.4rem 0.6rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.3rem;
+    font-size: 0.95rem;
+    box-sizing: border-box; /* Include padding in element's total width */
+}
+
+.user-info .editable-input:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+.dropdown-toggle-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #4b5563;
+    transition: transform 0.2s ease;
+}
+
+.dropdown-toggle-button.expanded {
+    transform: rotate(90deg);
+}
+
+.user-cars-dropdown {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+    text-align: left;
+    background-color: #f3f4f6; /* Lighter background for dropdown */
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.user-cars-dropdown h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #4b5563;
+    font-size: 1.1rem;
+}
+
+.dropdown-car-item {
+    background-color: #ffffff;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+.dropdown-car-item:last-child {
+    margin-bottom: 0;
+}
+
+.user-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.action-button {
+    padding: 0.5rem 1rem;
+    color: white;
+    font-weight: 500;
+    border-radius: 0.4rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.action-button.edit, .action-button.save { /* Combined styles for edit and save */
+    background-color: #4299e1; /* Blue for Edit/Save */
+}
+.action-button.edit:hover, .action-button.save:hover {
+    background-color: #2b6cb0;
+    transform: scale(1.05);
+}
+
+.action-button.delete {
+    background-color: #ef4444; /* Red for Delete */
+}
+.action-button.delete:hover {
+    background-color: #dc2626;
+    transform: scale(1.05);
+}
+
+.action-button.cancel {
+    background-color: #6b7280; /* Gray for Cancel */
+}
+.action-button.cancel:hover {
+    background-color: #4b5563;
+    transform: scale(1.05);
+}
+
+
+/* Message box styling (consistent across pages) */
+.message-box {
+    background-color: #fefcbf; /* Light yellow */
+    color: #8a6d3b; /* Dark yellow */
+    border: 1px solid #faebcc;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.message-box.success {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green */
+    border-color: #c3e6cb;
+}
+
+.message-box.error {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
+    border-color: #f5c6cb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .admin-users-container {
+        padding: 1.5rem;
+        margin-top: 4rem;
+        max-width: 90%;
+    }
+    .admin-users-title {
+        font-size: 1.8rem;
+    }
+    .user-list-item {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.2rem;
+    }
+    .admin-users-header {
+        padding: 0.8rem 1.5rem;
+        top: 0.8rem;
+        left: 1.5rem;
+    }
+    .admin-users-logo {
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-users-container {
+        padding: 1rem;
+        margin-top: 3rem;
+        max-width: 95%;
+    }
+    .admin-users-title {
+        font-size: 1.5rem;
+    }
+    .user-list-item {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    .admin-users-header {
+        padding: 0.5rem 1rem;
+        top: 0.5rem;
+        left: 1rem;
+    }
+    .admin-users-logo {
+        height: 40px;
+    }
+    .dropdown-toggle-button {
+        font-size: 1.2rem;
+    }
+}

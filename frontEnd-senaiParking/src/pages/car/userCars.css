@@ -1,0 +1,159 @@
+/* userCars.css */
+
+.body-user-cars {
+    background-color: white;
+    margin: 0;
+    padding: 0; /* Remove padding from body to allow logo to go to true corner */
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh; /* Ensure full viewport height */
+    width: 100vw; /* Ensure full viewport width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative; /* Essential for absolute positioning of logo within it */
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.user-cars-header {
+    width: calc(100% - 4rem);
+    display: flex;
+    justify-content: space-between; 
+    padding: 1rem 2rem; /* Consistent padding: top/bottom, left/right */
+    box-sizing: border-box;
+    position: absolute; /* Position logo absolutely within body-user-cars */
+    top: 1rem;
+    left: 2rem;
+    z-index: 10; /* Ensure logo is on top of other content */
+}
+
+.user-cars-logo {
+    height: 60px; /* Adjust logo size as needed */
+    width: auto;
+    border-radius: 0.5rem; /* Rounded corners for the logo */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.user-cars-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the top within the box */
+    width: 100%;
+    max-width: 600px; /* Max width for the list container */
+    padding: 2rem;
+    background-color: #fcfcfc; /* Light background for the box */
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    gap: 1.5rem; /* Space between elements in the box */
+    flex-grow: 1; /* Allow container to grow and push down */
+    margin-top: 5rem; /* Push content down to make space for the absolute logo */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.user-cars-title {
+    font-size: 2rem; /* Title for the page */
+    font-weight: bold;
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
+.car-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem; /* Space between car items */
+    padding-top: 1rem; /* Padding at the top of the list */
+}
+
+.car-list-item {
+    background-color: #f0f0f0;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    text-align: left; /* Align text inside list items to the left */
+    color: #374151;
+    border-left: 5px solid #3b82f6; /* Blue border for car items */
+}
+
+.car-list-item p {
+    margin: 0.25rem 0;
+}
+
+.car-list-item strong {
+    color: #1f2937;
+}
+
+/* Message box styling (consistent across pages) */
+.message-box {
+    background-color: #fefcbf; /* Light yellow */
+    color: #8a6d3b; /* Dark yellow */
+    border: 1px solid #faebcc;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.message-box.success {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green */
+    border-color: #c3e6cb;
+}
+
+.message-box.error {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
+    border-color: #f5c6cb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .user-cars-container {
+        padding: 1.5rem;
+        margin-top: 4rem;
+        max-width: 90%;
+    }
+    .user-cars-title {
+        font-size: 1.8rem;
+    }
+    .car-list-item {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.2rem;
+    }
+    .user-cars-header {
+        padding: 0.8rem 1.5rem;
+        top: 0.8rem;
+        left: 1.5rem;
+    }
+    .user-cars-logo {
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-cars-container {
+        padding: 1rem;
+        margin-top: 3rem;
+        max-width: 95%;
+    }
+    .user-cars-title {
+        font-size: 1.5rem;
+    }
+    .car-list-item {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    .user-cars-header {
+        padding: 0.5rem 1rem;
+        top: 0.5rem;
+        left: 1rem;
+    }
+    .user-cars-logo {
+        height: 40px;
+    }
+}
