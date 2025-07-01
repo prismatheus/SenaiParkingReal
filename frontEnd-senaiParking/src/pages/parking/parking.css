@@ -1,0 +1,175 @@
+/* parking.css */
+
+.body-parking {
+    background-color: white;
+    margin: 0;
+    padding: 0; /* Remove padding from body to allow logo to go to true corner */
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh; /* Ensure full viewport height */
+    width: 100vw; /* Ensure full viewport width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative; /* Essential for absolute positioning of logo within it */
+    overflow-x: hidden; /* Prevent horizontal scrollbar due to logo position */
+}
+
+.parking-header {
+    width: calc(100% - 4rem);
+    display: flex;
+    justify-content: space-between; /* Push logo to the left */
+    padding: 1rem 2rem; /* Consistent padding: top/bottom, left/right */
+    box-sizing: border-box;
+    position: absolute; /* Position logo absolutely within body-parking */
+    top: 1rem;
+    left: 2rem;
+    z-index: 10; /* Ensure logo is on top of other content */
+}
+
+.parking-logo {
+    height: 60px; /* Adjust logo size as needed */
+    width: auto;
+    border-radius: 0.5rem; /* Rounded corners for the logo */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.parking-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px; /* Max width for the content */
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    gap: 2rem;
+    flex-grow: 1; /* Allow container to grow and push down */
+    margin-top: 5rem; /* Push content down to make space for the absolute logo */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.availability-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #374151;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.parking-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    gap: 1.5rem; /* Space between squares */
+    width: 100%;
+    max-width: 600px; /* Max width for the grid to keep squares proportional */
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+}
+
+.parking-spot {
+    width: 100%; /* Take full width of its grid cell */
+    padding-bottom: 100%; /* Create a square shape (1:1 aspect ratio) */
+    position: relative;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    display: flex; /* For centering content if needed */
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: default;
+}
+
+.parking-spot.available {
+    background-color: #28a745; /* Green */
+}
+
+.parking-spot.unavailable {
+    background-color: #dc3545; /* Red */
+}
+
+/* Optional: Add a number inside each square */
+.parking-spot span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2em;
+}
+
+/* Message box styling (copied from home.css for consistency) */
+.message-box {
+    background-color: #fefcbf; /* Light yellow */
+    color: #8a6d3b; /* Dark yellow */
+    border: 1px solid #faebcc;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.message-box.success {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green */
+    border-color: #c3e6cb;
+}
+
+.message-box.error {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
+    border-color: #f5c6cb;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .parking-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+        gap: 1rem;
+    }
+    .availability-text {
+        font-size: 1.8rem;
+    }
+    .parking-container {
+        padding: 1rem;
+        margin-top: 4rem; /* Adjust for smaller screens */
+    }
+    .parking-header {
+        padding: 0.8rem 1.5rem;
+    }
+    .parking-logo {
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .parking-grid {
+        grid-template-columns: repeat(2, 1fr); /* Still 2 columns on very small screens */
+        gap: 0.8rem;
+    }
+    .availability-text {
+        font-size: 1.5rem;
+    }
+    .parking-spot {
+        border-radius: 0.4rem;
+    }
+    .parking-container {
+        padding: 0.8rem;
+        margin-top: 3rem; /* Adjust for very small screens */
+    }
+    .parking-header {
+        padding: 0.5rem 1rem;
+    }
+    .parking-logo {
+        height: 40px;
+    }
+}

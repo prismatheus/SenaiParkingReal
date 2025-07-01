@@ -1,0 +1,247 @@
+/* home.css */
+
+.body-home {
+    background-color: white;
+    margin: 0;
+    padding: 2rem; /* Adiciona algum padding para espaçamento geral */
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh; /* Garante altura total da viewport */
+    width: 100vw; /* Garante largura total da viewport */
+    display: flex;
+    flex-direction: column; /* Layout de coluna para cabeçalho e conteúdo */
+    align-items: center;
+    box-sizing: border-box;
+    position: relative; /* Para posicionamento absoluto do cabeçalho */
+    overflow-x: hidden; /* Previne barra de rolagem horizontal devido à posição da logo */
+}
+
+.header-home {
+    width: calc(100% - 4rem); /* Ajusta a largura para considerar o padding do body */
+    display: flex;
+    justify-content: space-between; /* Empurra a logo para a esquerda e os botões para a direita */
+    align-items: center; /* Centraliza verticalmente os itens no cabeçalho */
+    padding: 0; /* Sem padding aqui, o padding é tratado pelo body */
+    box-sizing: border-box;
+    position: absolute; /* Posiciona o cabeçalho absolutamente dentro de body-home */
+    top: 2rem; /* Alinha com o padding superior do body */
+    left: 2rem; /* Alinha com o padding esquerdo do body */
+    z-index: 10; /* Garante que o cabeçalho esteja sobre outros conteúdos */
+}
+
+.logo-home {
+    height: 60px; /* Ajusta o tamanho da logo conforme necessário */
+    width: auto;
+    border-radius: 0.5rem; /* Cantos arredondados para a logo */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Estilo para o grupo de botões no cabeçalho */
+.header-buttons-group {
+    display: flex;
+    gap: 1rem; /* Espaço entre os botões */
+    align-items: center; /* Alinha verticalmente os botões */
+}
+
+/* Estilo para os botões de ação no cabeçalho (agora com texto ou imagem) */
+.header-action-button {
+    background-color:transparent; /* Cor azul similar ao botão de login */
+    color: white; /* Cor do texto */    
+    border: none;
+    border-radius: 50%; /* Botões r etangulares com cantos arredondados */
+    padding: 0.1rem; /* Preenchimento padrão para botões de texto */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transição suave para hover */
+    font-weight: 600; /* Texto em negrito */
+    font-size: 1rem; /* Tamanho da fonte */
+    white-space: nowrap; /* Previne que o texto quebre linha */
+    display: flex; /* Para centralizar o conteúdo (imagem ou texto) */
+    justify-content: center;
+    align-items: center;
+    /* Ajustes para o tamanho do botão, similar ao de "Sair" */
+    height: 48px; /* Altura fixa */
+    min-width: 48px; /* Largura mínima para o botão (permite que texto cresça) */
+    box-sizing: border-box; /* Garante que padding e borda não aumentem o tamanho total */
+}
+
+.header-action-button:hover {
+    background-color: #005ce72a; /* Tom mais escuro no hover */
+    transform: scale(1.1); /* Efeito de escala no hover */
+}
+
+/* Estilo específico para a imagem dentro do botão de cabeçalho */
+.header-action-button .button-icon {
+    height: 40px; /* Altura da imagem, ajuste conforme o ícone userMenuIcon.png */
+    width: auto; /* Mantém a proporção da imagem */
+    display: block; /* Garante que a imagem se comporte como um bloco */
+}
+
+
+/* Estilo específico para o botão de logout */
+.logout-button {
+    background-color: transparent; /* Vermelho para o botão de logout */
+}
+
+.logout-button:hover {
+    background-color: #c8233341; /* Tom mais escuro no hover para logout */
+}
+
+.main-content {
+    flex-grow: 1; /* Permite que o conteúdo principal ocupe o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center;
+    width: 100%;
+    max-width: 90%; /* Largura máxima para a área de conteúdo */
+    padding-top: 5rem; /* Espaço para o cabeçalho absoluto */
+    box-sizing: border-box;
+}
+
+.title-home {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #374151;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.button-columns-container {
+    display: flex;
+    justify-content: center; /* Centraliza as colunas horizontalmente */
+    align-items: flex-start; /* Alinha as colunas no topo */
+    gap: 2rem; /* Espaço entre as colunas */
+    flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+    width: 100%;
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espaço entre os botões em uma coluna */
+    min-width: 200px; /* Largura mínima para cada coluna */
+    flex: 1; /* Permite que as colunas cresçam e diminuam */
+    max-width: 300px; /* Largura máxima para uma única coluna */
+}
+
+.home-button {
+    padding: 1rem 1.5rem;
+    background-color: #374151;
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.1rem;
+    white-space: nowrap; /* Previne que o texto quebre linha */
+}
+
+.home-button:hover {
+    background-color: #1f2937;
+    transform: scale(1.03); /* Escala ligeiramente menor que o login para botões agrupados */
+}
+
+.message-box {
+    background-color: #fefcbf; /* Amarelo claro */
+    color: #8a6d3b; /* Amarelo escuro */
+    border: 1px solid #faebcc;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.message-box.success {
+    background-color: #d4edda; /* Verde claro */
+    color: #155724; /* Verde escuro */
+    border-color: #c3e6cb;
+}
+
+.message-box.error {
+    background-color: #f8d7da; /* Vermelho claro */
+    color: #721c24; /* Vermelho escuro */
+    border-color: #f5c6cb;
+}
+
+.user-type-text {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #555;
+}
+
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+    .button-columns-container {
+        flex-direction: column; /* Empilha as colunas verticalmente em telas menores */
+        align-items: center; /* Centraliza as colunas empilhadas */
+        gap: 1.5rem;
+    }
+
+    .button-column {
+        width: 90%; /* Aumenta a largura das colunas quando empilhadas */
+        max-width: 400px; /* Largura máxima para colunas empilhadas */
+    }
+
+    .title-home {
+        font-size: 2rem;
+    }
+
+    .logo-home {
+        height: 50px;
+    }
+    /* Ajusta o posicionamento do cabeçalho para telas menores */
+    .header-home {
+        top: 1rem;
+        left: 1rem;
+        width: calc(100% - 2rem);
+    }
+    .header-action-button { /* Ajusta o padding para botões de cabeçalho em telas menores */
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        height: 40px; /* Reduz a altura do botão */
+    }
+    .header-action-button .button-icon {
+        height: 24px; /* Ajusta o tamanho da imagem em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .body-home {
+        padding: 1rem;
+    }
+
+    .header-home {
+        top: 0.5rem;
+        left: 0.5rem;
+        width: calc(100% - 1rem);
+    }
+
+    .logo-home {
+        height: 40px;
+    }
+
+    .home-button {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+
+    .title-home {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    .header-action-button { /* Ajusta o padding para botões de cabeçalho em telas menores */
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        height: 36px; /* Reduz a altura do botão ainda mais */
+    }
+    .header-action-button .button-icon {
+        height: 20px; /* Ajusta o tamanho da imagem em telas muito pequenas */
+    }
+}
