@@ -1,0 +1,54 @@
+/* src/components/BackButton.css */
+
+.back-button {
+    background-color:transparent; /* Cor azul similar ao botão de login */
+    color: white; /* Cor do texto */    
+    border: none;
+    border-radius: 50%; /* Botões r etangulares com cantos arredondados */
+    padding: 0.1rem; /* Preenchimento padrão para botões de texto */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transição suave para hover */
+    font-weight: 600; /* Texto em negrito */
+    font-size: 1rem; /* Tamanho da fonte */
+    display: flex; /* Para centralizar o conteúdo (imagem ou texto) */
+    justify-content: center;
+    align-items: center;
+    /* Ajustes para o tamanho do botão, similar ao de "Sair" */
+    height: 48px; /* Altura fixa */
+    min-width: 48px; /* Largura mínima para o botão (permite que texto cresça) */
+    box-sizing: border-box; /* Garante que padding e borda não aumentem o tamanho total */
+}
+
+.back-button:hover {
+    background-color: #005ae233; /* Tom mais escuro no hover */
+    transform: scale(1.1); /* Efeito de escala no hover */
+}
+
+.back-icon {
+    height: 32px; /* Altura do ícone de seta */
+    width: auto; /* Mantém a proporção da imagem */
+    display: block; /* Garante que a imagem se comporte como bloco */
+    /* Se a sua imagem for escura e você quiser que ela apareça branca no botão azul, use: */
+    /* filter: brightness(0) invert(1); */
+}
+
+/* Ajustes Responsivos para o botão de voltar */
+@media (max-width: 768px) {
+    .back-button {
+        width: 40px;
+        height: 40px;
+    }
+    .back-icon {
+        height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-button {
+        width: 36px;
+        height: 36px;
+    }
+    .back-icon {
+        height: 20px;
+    }
+}
